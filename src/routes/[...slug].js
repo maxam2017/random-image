@@ -1,16 +1,19 @@
-import { encodePNGToStream, make, registerFont } from 'pureimage';
+import path from 'path';
 import { PassThrough } from 'stream';
+
+import { encodePNGToStream, make, registerFont } from 'pureimage';
 import randomColor from 'randomcolor';
+
 import streamToBuffer from '../lib/streamToBuffer';
 import getTimestamp from '../lib/getTimestamp';
-
-const font = registerFont('./static/SourceSansPro-Regular.ttf', 'Source Sans Pro');
-font.loadSync();
 
 export const get = async () => {
 	const size = 600;
 	const bitmap = make(size, size);
 	const ctx = bitmap.getContext('2d');
+
+	const font = registerFont(path.join('static', 'SourceSansPro-Regular.ttf'), 'Source Sans Pro');
+	font.loadSync();
 
 	// render background
 	ctx.fillStyle = randomColor();
