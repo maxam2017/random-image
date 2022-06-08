@@ -1,5 +1,5 @@
 {
-	"name": "png",
+	"name": "random-image",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
