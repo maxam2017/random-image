@@ -1,20 +1,9 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		browser: {
-			hydrate: true,
-			router: false
-		},
-		prerender: {
-			enabled: true
-		},
-		adapter: adapter({
-			pages: 'build', // path to public directory
-			assets: 'build', // path to public directory
-			fallback: null
-		})
+		adapter: adapter()
 	}
 };
 
