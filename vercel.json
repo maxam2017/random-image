@@ -1,6 +1,9 @@
 {
+    "rewrites": [
+        {"source": "/(.*)", "destination": "/api"}
+      ],
     "functions": {
-      "src/routes/[...slug].js": {
+      "api/*.js": {
         "includeFiles": "static/*"
       }
     }
